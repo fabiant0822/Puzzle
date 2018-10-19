@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Unit1.pas"/>
+    <File Path="Unit1.dfm"/>
+    <File Path="Unit2.pas"/>
+    <File Path="Unit2.dfm"/>
+  </ProjectSortOrder>
+  <Transactions>
+    <Transaction>2018/10/19 11:31:34.822,C:\Users\ftamas\Documents\001\Delphi\Puzzle\Puzzle\Unit3.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

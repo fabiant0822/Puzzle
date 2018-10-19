@@ -1,0 +1,70 @@
+unit Unit3;
+
+interface
+
+uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
+  Buttons, ExtCtrls, GPSSEng;
+
+type
+  TAboutBox = class(TForm)
+    Panel1: TPanel;
+    ProgramIcon: TImage;
+    ProductName: TLabel;
+    Version: TLabel;
+    Copyright: TLabel;
+    Comments: TLabel;
+    OKButton: TButton;
+    Edit1: TEdit;
+    Label1: TLabel;
+    Timer1: TTimer;
+    Image1: TImage;
+    procedure OKButtonClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Timer1Timer(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  AboutBox: TAboutBox;
+
+implementation
+
+uses Unit1;
+
+{$R *.dfm}
+
+procedure TAboutBox.OKButtonClick(Sender: TObject);
+begin
+ Close
+end;
+
+procedure TAboutBox.FormShow(Sender: TObject);
+begin
+ PlayWave('About');
+ Timer1.Enabled:=True;
+ PlanetSystem.Initialize(Image1.Canvas);
+
+end;
+
+procedure TAboutBox.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ Timer1.Enabled:=False;
+end;
+
+procedure TAboutBox.Timer1Timer(Sender: TObject);
+begin
+ PlanetSystem.Draw;
+end;
+
+procedure TAboutBox.Image1Click(Sender: TObject);
+begin
+ PlanetSystem.Initialize(Image1.Canvas);
+end;
+
+end.
+
